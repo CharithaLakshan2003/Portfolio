@@ -6,7 +6,7 @@ import SkillsPage from './pages/SkillsPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
-import AdminPage from './pages/admin/AdminPage';
+
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>
-        <Route path="/admin/*" element={<AdminPage />} />
+        
       </Routes>
     </BrowserRouter>
   );

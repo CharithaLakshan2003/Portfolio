@@ -4,29 +4,27 @@ import type { PortfolioData, ContactMessage } from '../types';
 
 const defaultData: PortfolioData = {
   personalInfo: {
-    name: 'Alex Johnson',
+    name: 'Charitha Lakshan Edirimanna',
     title: 'Full-Stack Developer',
     tagline: 'Building elegant solutions to complex problems',
-    bio: `I'm a passionate full-stack developer with over 5 years of experience crafting modern web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating performant, accessible, and user-friendly interfaces.
+    bio: `I'm a passionate full-stack developer with over 2 years of experience crafting modern web applications. I specialize in React, Node.js, Java Spring Boot, SQL and cloud technologies, with a strong focus on creating performant, accessible, and user-friendly interfaces.
 
-When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring the latest trends in web development. I believe in continuous learning and pushing the boundaries of what's possible on the web.
-
-Currently open to exciting opportunities where I can make a meaningful impact and collaborate with talented teams.`,
+When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring the latest trends in web development. I believe in continuous learning and pushing the boundaries of what's possible on the web.`,
     shortBio: 'Full-Stack Developer passionate about building elegant web applications with React & Node.js.',
-    email: 'alex.johnson@example.com',
-    phone: '+1 (555) 123-4567',
-    location: 'San Francisco, CA',
-    github: 'https://github.com/alexjohnson',
-    linkedin: 'https://linkedin.com/in/alexjohnson',
-    twitter: 'https://twitter.com/alexjohnson',
-    website: 'https://alexjohnson.dev',
+    email: 'charithaedirimanna@gmail.com',
+    phone: '+94 76 037 7549',
+    location: '103/A, Pahalakoratuwa, Hingurakanda, Katuwana',
+    github: 'https://github.com/CharithaLakshan2003',
+    linkedin: 'https://www.linkedin.com/in/charitha-lakshan-b661b1305/',
+    twitter: 'https://twitter.com/charitha_lakshan',
+    website: 'https://charithalakshan.dev',
     avatar: '',
   },
   skills: [
     { id: '1', name: 'React', level: 95, category: 'Frontend' },
     { id: '2', name: 'TypeScript', level: 90, category: 'Languages' },
     { id: '3', name: 'Node.js', level: 85, category: 'Backend' },
-    { id: '4', name: 'Python', level: 80, category: 'Languages' },
+    { id: '4', name: 'Java', level: 80, category: 'Languages' },
     { id: '5', name: 'PostgreSQL', level: 78, category: 'Database' },
     { id: '6', name: 'MongoDB', level: 75, category: 'Database' },
     { id: '7', name: 'Docker', level: 70, category: 'DevOps' },
@@ -160,8 +158,6 @@ Currently open to exciting opportunities where I can make a meaningful impact an
 interface PortfolioStore {
   data: PortfolioData;
   messages: ContactMessage[];
-  isAdminLoggedIn: boolean;
-  adminPassword: string;
   updatePersonalInfo: (info: Partial<PortfolioData['personalInfo']>) => void;
   updateSkills: (skills: PortfolioData['skills']) => void;
   addSkill: (skill: PortfolioData['skills'][0]) => void;
@@ -178,9 +174,7 @@ interface PortfolioStore {
   addMessage: (message: Omit<ContactMessage, 'id' | 'timestamp' | 'read'>) => void;
   markMessageRead: (id: string) => void;
   deleteMessage: (id: string) => void;
-  adminLogin: (password: string) => boolean;
-  adminLogout: () => void;
-  changeAdminPassword: (newPassword: string) => void;
+  
 }
 
 export const usePortfolioStore = create<PortfolioStore>()(
@@ -188,8 +182,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
     (set, get) => ({
       data: defaultData,
       messages: [],
-      isAdminLoggedIn: false,
-      adminPassword: 'admin123',
+      
 
       updatePersonalInfo: (info) =>
         set((state) => ({
@@ -276,17 +269,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
       deleteMessage: (id) =>
         set((state) => ({ messages: state.messages.filter((m) => m.id !== id) })),
 
-      adminLogin: (password) => {
-        if (password === get().adminPassword) {
-          set({ isAdminLoggedIn: true });
-          return true;
-        }
-        return false;
-      },
-
-      adminLogout: () => set({ isAdminLoggedIn: false }),
-
-      changeAdminPassword: (newPassword) => set({ adminPassword: newPassword }),
+      // Admin functionality removed
     }),
     {
       name: 'portfolio-storage',

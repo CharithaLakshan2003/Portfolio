@@ -27,8 +27,6 @@ export default function Navbar() {
     setIsMenuOpen(false);
   }, [location]);
 
-  const isAdmin = location.pathname.startsWith('/admin');
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -49,47 +47,29 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          {!isAdmin && (
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    location.pathname === link.href
-                      ? 'text-white bg-white/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Admin badge / login link */}
-          <div className="hidden md:flex items-center gap-3">
-            {isAdmin ? (
-              <span className="text-violet-400 text-sm font-medium">Admin Panel</span>
-            ) : (
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
               <Link
-                to="/admin"
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                key={link.href}
+                to={link.href}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  location.pathname === link.href
+                    ? 'text-white bg-white/10'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
               >
-                Admin
+                {link.label}
               </Link>
-            )}
+            ))}
           </div>
 
           {/* Mobile menu button */}
-          {!isAdmin && (
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          )}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
@@ -116,12 +96,7 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/admin"
-                className="px-3 py-2.5 text-xs text-gray-500 hover:text-gray-300 transition-colors"
-              >
-                Admin Panel
-              </Link>
+             
             </div>
           </motion.div>
         )}
