@@ -139,7 +139,7 @@ export default function ContactPage() {
                       type="text"
                       value={form.name}
                       onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
-                      placeholder="John Doe"
+                      placeholder="Charitha Lakshan"
                       className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors ${
                         errors.name ? 'border-red-500' : 'border-white/10'
                       }`}
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       type="email"
                       value={form.email}
                       onChange={e => setForm(prev => ({ ...prev, email: e.target.value }))}
-                      placeholder="john@example.com"
+                      placeholder="charitha@gmail.com"
                       className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors ${
                         errors.email ? 'border-red-500' : 'border-white/10'
                       }`}
