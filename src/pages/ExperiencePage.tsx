@@ -139,7 +139,7 @@ export default function ExperiencePage() {
                             )}
                           </div>
                         </div>
-                        <div className="text-gray-500 flex-shrink-0">
+                        <div className="text-gray-500 shrink-0">
                           {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         </div>
                       </div>

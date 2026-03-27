@@ -16,9 +16,10 @@ When I'm not coding, you'll find me contributing to open-source projects, writin
     location: '103/A, Pahalakoratuwa, Hingurakanda, Katuwana',
     github: 'https://github.com/CharithaLakshan2003',
     linkedin: 'https://www.linkedin.com/in/charitha-lakshan-b661b1305/',
-    twitter: 'https://twitter.com/charitha_lakshan',
+    facebook: 'https://www.facebook.com/charitha.lakshan.528',
+    instagram: 'https://www.instagram.com/charitha_edirimanna?igsh=aHg4bnBmZzhmNmc1',
     website: 'https://charithalakshan.dev',
-    avatar: '',
+    avatar: '/avatar.jpg',
   },
   skills: [
     { id: '1', name: 'React', level: 95, category: 'Frontend' },
@@ -179,10 +180,9 @@ interface PortfolioStore {
 
 export const usePortfolioStore = create<PortfolioStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       data: defaultData,
       messages: [],
-      
 
       updatePersonalInfo: (info) =>
         set((state) => ({

@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-violet-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
               {/* <Code2 className="w-4 h-4 text-white" /> */}
               <h3 className="w-4 h-4 text-white" />CLE
             </div>

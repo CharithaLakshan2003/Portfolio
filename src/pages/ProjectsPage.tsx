@@ -66,7 +66,7 @@ export default function ProjectsPage() {
               className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all hover:-translate-y-1"
             >
               {/* Project image / placeholder */}
-              <div className={`h-40 bg-gradient-to-br ${PROJECT_COLORS[i % PROJECT_COLORS.length]} flex items-center justify-center relative`}>
+              <div className={`h-40 bg-linear-to-br ${PROJECT_COLORS[i % PROJECT_COLORS.length]} flex items-center justify-center relative`}>
                 {project.imageUrl ? (
                   <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
                 ) : (

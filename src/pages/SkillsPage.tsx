@@ -147,7 +147,7 @@ function SkillCard({ skill, delay, getLevelLabel, getLevelColor }: {
           initial={{ width: 0 }}
           animate={{ width: `${skill.level}%` }}
           transition={{ delay: delay + 0.2, duration: 0.8, ease: 'easeOut' }}
-          className={`h-full rounded-full bg-gradient-to-r ${getLevelColor(skill.level)}`}
+          className={`h-full rounded-full bg-linear-to-r ${getLevelColor(skill.level)}`}
         />
       </div>
       <div className="mt-2 text-right text-xs text-gray-500">{skill.level}%</div>

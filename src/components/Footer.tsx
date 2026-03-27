@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
 
 export default function Footer() {
@@ -30,12 +30,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
             )}
-            {personalInfo.twitter && (
-              <a href={personalInfo.twitter} target="_blank" rel="noopener noreferrer"
-                className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">
-                <Twitter className="w-5 h-5" />
-              </a>
-            )}
+            
             {personalInfo.email && (
               <a href={`mailto:${personalInfo.email}`}
                 className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all">

@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
 
 const fadeUp = {
@@ -21,7 +20,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
+          <div className="absolute inset-0 bg-linear-to-br from-gray-950 via-gray-900 to-gray-950" />
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
         </div>
@@ -45,7 +44,7 @@ export default function HomePage() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
               >
                 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
                   {personalInfo.name}
                 </span>
               </motion.h1>
@@ -73,7 +72,7 @@ export default function HomePage() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5"
                 >
                   Get In Touch
                   <ArrowRight className="w-4 h-4" />
@@ -127,7 +126,7 @@ export default function HomePage() {
               className="hidden lg:flex justify-center"
             >
               <div className="relative">
-                <div className="w-72 h-72 rounded-3xl bg-gradient-to-br from-violet-500/20 to-indigo-500/20 border border-white/10 overflow-hidden backdrop-blur-sm">
+                <div className="w-72 h-72 rounded-3xl bg-linear-to-br from-violet-500/20 to-indigo-500/20 border border-white/10 overflow-hidden backdrop-blur-sm">
                   <img
                     src={personalInfo.avatar || '/avatar.jpg'}
                     alt={personalInfo.name}
@@ -179,7 +178,7 @@ export default function HomePage() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center p-6 rounded-2xl bg-white/5 border border-white/10"
               >
-                <div className="text-3xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl font-bold bg-linear-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -241,7 +240,7 @@ export default function HomePage() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg shadow-violet-500/25 text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all shadow-lg shadow-violet-500/25 text-lg"
             >
               Start a Conversation
               <ArrowRight className="w-5 h-5" />

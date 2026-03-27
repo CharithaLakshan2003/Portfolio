@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, Facebook, Instagram } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
 
 export default function ContactPage() {
@@ -42,7 +42,8 @@ export default function ContactPage() {
   const socialLinks = [
     { icon: Github, href: personalInfo.github, label: 'GitHub' },
     { icon: Linkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, href: personalInfo.twitter, label: 'Twitter' },
+    { icon: Facebook, href: personalInfo.facebook, label: 'Facebook' },
+    { icon: Instagram, href: personalInfo.instagram, label: 'Instagram' },
   ].filter(link => link.href);
 
   return (
@@ -72,7 +73,7 @@ export default function ContactPage() {
             <div className="space-y-4 mb-8">
               {contactItems.map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-xl bg-violet-500/10 border border-violet-500/20 flex-shrink-0">
+                  <div className="p-2.5 rounded-xl bg-violet-500/10 border border-violet-500/20 shrink-0">
                     <Icon className="w-4 h-4 text-violet-400" />
                   </div>
                   <div>
@@ -191,7 +192,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-violet-500/25"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 text-white font-semibold hover:from-violet-500 hover:to-indigo-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-violet-500/25"
                 >
                   {loading ? (
                     <div className="w-5 h-5 rounded-full border-2 border-white/20 border-t-white animate-spin" />

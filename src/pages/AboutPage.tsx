@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Github, Linkedin, Twitter, Download, User } from 'lucide-react';
+import { MapPin, Mail, Phone, Github, Linkedin, Facebook, Instagram, User } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
 
 export default function AboutPage() {
@@ -39,7 +38,7 @@ export default function AboutPage() {
                     className="w-32 h-32 rounded-full object-cover border-4 border-violet-500/30"
                   />
                 ) : (
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center border-4 border-violet-500/30">
+                  <div className="w-32 h-32 rounded-full bg-linear-to-br from-violet-500 to-indigo-600 flex items-center justify-center border-4 border-violet-500/30">
                     <span className="text-white text-5xl font-bold">{personalInfo.name.charAt(0)}</span>
                   </div>
                 )}
@@ -52,13 +51,13 @@ export default function AboutPage() {
               <div className="space-y-3 mb-6">
                 {personalInfo.location && (
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <MapPin className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 text-violet-400 shrink-0" />
                     <span>{personalInfo.location}</span>
                   </div>
                 )}
                 {personalInfo.email && (
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <Mail className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                    <Mail className="w-4 h-4 text-violet-400 shrink-0" />
                     <a href={`mailto:${personalInfo.email}`} className="hover:text-white transition-colors truncate">
                       {personalInfo.email}
                     </a>
@@ -66,7 +65,7 @@ export default function AboutPage() {
                 )}
                 {personalInfo.phone && (
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <Phone className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                    <Phone className="w-4 h-4 text-violet-400 shrink-0" />
                     <span>{personalInfo.phone}</span>
                   </div>
                 )}
@@ -86,10 +85,17 @@ export default function AboutPage() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 )}
-                {personalInfo.twitter && (
-                  <a href={personalInfo.twitter} target="_blank" rel="noopener noreferrer"
+                
+                {personalInfo.facebook && (
+                  <a href={personalInfo.facebook} target="_blank" rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
-                    <Twitter className="w-5 h-5" />
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                )}
+                {personalInfo.instagram && (
+                  <a href={personalInfo.instagram} target="_blank" rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                    <Instagram className="w-5 h-5" />
                   </a>
                 )}
               </div>
@@ -125,7 +131,7 @@ export default function AboutPage() {
                 { label: 'Location', value: personalInfo.location },
                 { label: 'Email', value: personalInfo.email },
                 { label: 'Available', value: 'Open to opportunities' },
-                { label: 'Languages', value: 'English' },
+                { label: 'Languages', value: 'English, Sinhala' },
               ].map((fact) => (
                 <div
                   key={fact.label}
