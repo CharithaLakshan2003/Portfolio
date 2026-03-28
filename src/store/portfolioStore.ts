@@ -7,10 +7,8 @@ const defaultData: PortfolioData = {
     name: 'Charitha Lakshan Edirimanna',
     title: 'Full-Stack Developer',
     tagline: 'Building elegant solutions to complex problems',
-    bio: `I'm a passionate full-stack developer with over 2 years of experience crafting modern web applications. I specialize in React, Node.js, Java Spring Boot, SQL and cloud technologies, with a strong focus on creating performant, accessible, and user-friendly interfaces.
-
-When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring the latest trends in web development. I believe in continuous learning and pushing the boundaries of what's possible on the web.`,
-    shortBio: 'Full-Stack Developer passionate about building elegant web applications with React & Node.js.',
+    bio: `I'm a Computer Science undergraduate at the University of Colombo School of Computing (UCSC), passionate about transforming ideas into elegant digital solutions. I specialize in modern web technologies and love building applications that make a difference. I specialize in React, Node.js, Java Spring Boot, SQL and cloud technologies, with a strong focus on creating performant, accessible, and user-friendly interfaces.`,
+    shortBio: 'Full-Stack Developer passionate about building elegant web applications with React, Node.js, Java Spring Boot, SQL and cloud technologies.',
     email: 'charithaedirimanna@gmail.com',
     phone: '+94 76 037 7549',
     location: '103/A, Pahalakoratuwa, Hingurakanda, Katuwana',
@@ -19,6 +17,7 @@ When I'm not coding, you'll find me contributing to open-source projects, writin
     facebook: 'https://www.facebook.com/charitha.lakshan.528',
     instagram: 'https://www.instagram.com/charitha_edirimanna?igsh=aHg4bnBmZzhmNmc1',
     website: 'https://charithalakshan.dev',
+      university: 'University of Colombo School of Computing (UCSC)',
     avatar: '/avatar.jpg',
   },
   skills: [

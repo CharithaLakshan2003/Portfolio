@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -39,11 +39,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-violet-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-              {/* <Code2 className="w-4 h-4 text-white" /> */}
-              <h3 className="w-4 h-4 text-white" />CLE
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              {/* Logo image — place your image at public/logo.png */}
+              <img src="/avatar.jpg" alt="CLE logo" className="w-6 h-6 object-cover rounded-sm" />
             </div>
-            <span className="text-white font-bold text-lg">Portfolio</span>
+            <span className="text-white font-bold text-lg">Charitha Edirimanna</span>
           </Link>
 
           {/* Desktop Nav */}

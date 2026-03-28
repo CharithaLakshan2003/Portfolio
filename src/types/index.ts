@@ -14,6 +14,7 @@ export interface PersonalInfo {
   facebook?: string;
   instagram?: string;
   website: string;
+  university?: string;
   avatar: string;
 }
 

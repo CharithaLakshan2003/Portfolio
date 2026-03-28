@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Github, Linkedin, Facebook, Instagram, User } from 'lucide-react';
+import { MapPin, Mail, Phone, Github, Linkedin, Facebook, Instagram, GraduationCap } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
 
 export default function AboutPage() {
@@ -69,6 +69,13 @@ export default function AboutPage() {
                     <span>{personalInfo.phone}</span>
                   </div>
                 )}
+
+                {personalInfo.university && (
+                  <div className="flex items-center gap-3 text-gray-400 text-sm">
+                    <GraduationCap className="w-4 h-4 text-violet-400 shrink-0" />
+                    <span>{personalInfo.university}</span>
+                  </div>
+                )}
               </div>
 
               {/* Social Links */}
@@ -111,7 +118,7 @@ export default function AboutPage() {
           >
             <div className="bg-white/5 border border-white/10 rounded-3xl p-8 mb-6">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <User className="w-5 h-5 text-violet-400" />
+                <GraduationCap className="w-5 h-5 text-violet-400" />
                 Biography
               </h3>
               <div className="space-y-4">
