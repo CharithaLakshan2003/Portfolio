@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
