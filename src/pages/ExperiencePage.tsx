@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, MapPin, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';

@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { usePortfolioStore } from '../store/portfolioStore';
-
-const CATEGORIES = ['All', 'Frontend', 'Backend', 'Languages', 'Database', 'DevOps', 'Tools'];
 
 export default function SkillsPage() {
   const { data } = usePortfolioStore();
