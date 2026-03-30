@@ -1,4 +1,3 @@
-// Portfolio Types
 
 export interface PersonalInfo {
   name: string;

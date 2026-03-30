@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { send } from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, Facebook, Instagram } from 'lucide-react';
 import { usePortfolioStore } from '../store/portfolioStore';
@@ -27,10 +28,36 @@ export default function ContactPage() {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1000));
-    addMessage(form);
-    setSubmitted(true);
-    setLoading(false);
+    try {
+      // store locally
+      addMessage(form);
+
+      // send via EmailJS (requires env vars: VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY)
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
+      if (serviceId && templateId && publicKey) {
+        const templateParams = {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+          to_email: personalInfo.email,
+        };
+
+        await send(serviceId, templateId, templateParams, publicKey);
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      // log error for debugging and show a client-side error message
+      // eslint-disable-next-line no-console
+      console.error('Email send error:', err);
+      setErrors(prev => ({ ...prev, form: 'Failed to send message. Please try again later.' }));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactItems = [
