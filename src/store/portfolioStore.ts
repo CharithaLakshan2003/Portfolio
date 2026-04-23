@@ -22,8 +22,8 @@ const defaultData: PortfolioData = {
   },
   skills: [
     { id: '1', name: 'React', level: 95, category: 'Frontend' },
-    { id: '2', name: 'TypeScript', level: 90, category: 'Languages' },
-    { id: '3', name: 'Next.js', level: 85, category: 'Frontend/Backend' },
+    { id: '2', name: 'TypeScript', level: 80, category: 'Languages' },
+    { id: '3', name: 'Next.js', level: 80, category: 'Frontend/Backend' },
     { id: '4', name: 'Java', level: 80, category: 'Languages' },
     { id: '5', name: 'Spring Boot', level: 88, category: 'Backend' },
     { id: '6', name: 'PostgreSQL', level: 78, category: 'Database' },
