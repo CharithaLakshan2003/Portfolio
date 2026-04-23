@@ -135,13 +135,13 @@ export default function HomePage() {
                 </div>
                 {/* Floating skill badges */}
                 <div className="absolute -top-4 -right-4 px-3 py-1.5 rounded-lg bg-gray-800 border border-white/10 text-white text-xs font-medium shadow-xl">
-                  React
+                  Next.js
                 </div>
                 <div className="absolute -bottom-4 -left-4 px-3 py-1.5 rounded-lg bg-gray-800 border border-white/10 text-white text-xs font-medium shadow-xl">
-                  TypeScript
+                  Spring Boot
                 </div>
                 <div className="absolute top-1/2 -right-8 px-3 py-1.5 rounded-lg bg-violet-500/20 border border-violet-500/30 text-violet-300 text-xs font-medium shadow-xl">
-                  Node.js
+                  TypeScript
                 </div>
               </div>
             </motion.div>
