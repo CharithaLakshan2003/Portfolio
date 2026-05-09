@@ -55,10 +55,7 @@ const defaultData: PortfolioData = {
       githubUrl: 'https://github.com/CharithaLakshan2003/CricCompiler-2nd-year-project.git',
       featured: true,
     },
-
-
-
-    {
+{
       id: '3',
       title: 'CL Bakers E-Commerce Platform',
       description: 'A full-featured e-commerce platform with real-time inventory management, and an admin dashboard. Built with Next.js, Taiwind css, Typescript, Prisma, PostgreSQL and JWT authentication.',
