@@ -49,6 +49,27 @@ export interface Experience {
   achievements: string[];
 }
 
+export interface Volunteering {
+  id: string;
+  clubName: string;
+  role: string;
+  description: string;
+  logo?: string;        // URL to club logo image
+  logoFallback?: string; // 1-2 letter initials fallback
+  color?: string;       // accent colour for the card
+  startDate: string;
+  endDate?: string;
+  current: boolean;
+  link?: string;
+}
+
+export interface GalleryImage {
+  id: string;
+  url: string;
+  title: string;
+  category?: string;
+}
+
 export interface ContactMessage {
   id: string;
   name: string;
@@ -64,4 +85,6 @@ export interface PortfolioData {
   skills: Skill[];
   projects: Project[];
   experiences: Experience[];
+  volunteering: Volunteering[];
+  gallery: GalleryImage[];
 }
