@@ -61,15 +61,15 @@ export default function VolunteeringSection() {
               {/* Colour accent bar on left */}
               <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${club.color || 'from-violet-500 to-indigo-500'}`} />
 
-              <div className="flex items-center gap-8 p-8 pl-10">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 p-6 sm:p-8 pl-8 sm:pl-10">
                 {/* ── Logo ────────────────────────────── */}
-                <div className="shrink-0">
-                  <div className="relative flex items-center justify-center min-w-[14rem] sm:min-w-[18rem]">
+                <div className="shrink-0 w-full sm:w-auto flex justify-center sm:block">
+                  <div className="relative flex items-center justify-center sm:min-w-[18rem]">
                     {club.logo ? (
                       <img
                         src={club.logo}
                         alt={club.clubName}
-                        className="w-56 sm:w-72 h-auto max-h-56 sm:max-h-72 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
+                        className="w-40 sm:w-72 h-auto max-h-40 sm:max-h-72 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
                         onError={(e) => {
                           const img = e.target as HTMLImageElement;
                           img.style.display = 'none';
@@ -78,20 +78,20 @@ export default function VolunteeringSection() {
                         }}
                       />
                     ) : null}
-                    <div className={`fallback-text hidden flex items-center justify-center w-32 h-32 rounded-full bg-white/5 border border-white/10 text-white font-bold text-4xl select-none ${club.logo ? '' : '!flex'}`}>
+                    <div className={`fallback-text hidden flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-white/5 border border-white/10 text-white font-bold text-3xl sm:text-4xl select-none ${club.logo ? '' : '!flex'}`}>
                       {club.logoFallback || club.clubName.slice(0, 2).toUpperCase()}
                     </div>
                   </div>
                 </div>
 
                 {/* ── Content ─────────────────────────── */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <div>
-                      <h3 className="text-white font-bold text-xl mb-1 leading-snug">
+                <div className="flex-1 min-w-0 w-full flex flex-col items-center sm:items-start text-center sm:text-left">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 mb-4 w-full">
+                    <div className="flex flex-col items-center sm:items-start">
+                      <h3 className="text-white font-bold text-xl mb-2 sm:mb-1 leading-snug">
                         {club.clubName}
                       </h3>
-                      <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
                         <span className="flex items-center gap-1.5 text-violet-400 text-sm font-semibold">
                           <Users className="w-3.5 h-3.5" />
                           {club.role}
@@ -120,11 +120,11 @@ export default function VolunteeringSection() {
                     </div>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-5 sm:mb-4">
                     {club.description}
                   </p>
 
-                  <div className="flex items-center gap-4 text-gray-600 text-xs">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-gray-600 text-xs w-full">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5" />
                       {formatDate(club.startDate)} – {club.current ? 'Present' : (club.endDate ? formatDate(club.endDate) : '')}

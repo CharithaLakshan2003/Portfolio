@@ -49,9 +49,16 @@ export default function Navbar() {
   /* ── smooth scroll ───────────────────────────────────── */
   const scrollTo = (href: string) => {
     setIsMenuOpen(false);
-    const id = href.slice(1);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    setTimeout(() => {
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        // Offset for the fixed navbar (approx 80px)
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 150); // slight delay to prevent menu unmount from interrupting scroll on mobile
   };
 
   return (
@@ -136,34 +143,42 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-gray-950/95 backdrop-blur-xl border-t border-white/5"
+            className="md:hidden bg-gray-950/95 backdrop-blur-xl border-t border-white/5 overflow-hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => {
                 const isActive = activeSection === link.href.slice(1);
                 return (
-                  <motion.button
+                  <motion.a
                     key={link.href}
+                    href={link.href}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.04 }}
-                    onClick={() => scrollTo(link.href)}
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollTo(link.href);
+                    }}
+                    className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive
                         ? 'text-violet-300 bg-violet-500/10 border border-violet-500/20'
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                   >
                     {link.label}
-                  </motion.button>
+                  </motion.a>
                 );
               })}
-              <button
-                onClick={() => scrollTo('#contact')}
-                className="mt-2 w-full px-4 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-violet-600 to-indigo-600 text-white"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo('#contact');
+                }}
+                className="block text-center mt-2 w-full px-4 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-violet-600 to-indigo-600 text-white"
               >
                 Hire Me
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
